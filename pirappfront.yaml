@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend-deployment
-  namespace: pirapp  # Specify the namespace here
+  namespace: default  # Specify the namespace here
 spec:
   replicas: 1
   selector:
@@ -24,8 +24,8 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: pirapp-frontend-service
-  namespace: pirapp  # Specify the namespace here
+  name: pirapp-frontend-service-1
+  namespace: default  # Specify the namespace here
 spec:
   selector:
     app: frontend
