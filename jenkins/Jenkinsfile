@@ -1,0 +1,57 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout Code') {
+            steps {
+                script {
+                    deleteDir()
+                    withCredentials([string(credentialsId: 'AzureCredential', variable: 'AzureCredential')]) {
+                        sh 'git clone -b stage_10012024 https://${AzureCredential}@dev.azure.com/kovaionai/Generic-Workflows/_git/generic-workflows-frontend'
+                    }
+                }
+            }
+        }
+
+        stage('Build image') {
+            steps {
+                script {
+                    def dockerImageName = 'sathish8329/priappfront'
+                    
+                    // Change to the directory containing the Dockerfile
+                    dir('generic-workflows-frontend') {
+                        // Define dockerImage at a higher scope
+                        dockerImage = docker.build(dockerImageName)
+                    }
+                }
+            }
+        }
+
+        stage('Test image') {
+            steps {
+                script {
+                    dockerImage.inside {
+                        sh 'echo "Tests passed"'
+                    }
+                }
+            }
+        }
+
+        stage('Push image') {
+            steps {
+                script {
+                    docker.withRegistry('https://registry.hub.docker.com', 'DockerHubCredentials') {
+                        dockerImage.push("${env.BUILD_NUMBER}")
+                    }
+                }
+            }
+        }
+
+        stage('Trigger ManifestUpdate') {
+            steps {
+                echo "Triggering updatemanifestjob"
+                build job: 'updatemanifests', parameters: [string(name: 'DOCKERTAG', value: env.BUILD_NUMBER)]
+            }
+        }
+    }
+}
