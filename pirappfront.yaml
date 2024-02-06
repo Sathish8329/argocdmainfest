@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend-deployment
-  namespace: default  # Specify the namespace here
+  namespace: pirapp  # Specify the namespace here
 spec:
   replicas: 1
   selector:
@@ -17,15 +17,15 @@ spec:
         eks.amazonaws.com/nodegroup: new-kovaionai-ng
       containers:
       - name: frontend
-        image: sathish8329/priappfront:43
+        image: sathish8329/priappfront:2
         ports:
         - containerPort: 3000
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: pirapp-frontend-service-1
-  namespace: default  # Specify the namespace here
+  name: pirapp-frontend-service
+  namespace: pirapp  # Specify the namespace here
 spec:
   selector:
     app: frontend
