@@ -31,3 +31,37 @@ spec:
             name: pirapp-frontend-service
             port:
               number: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pirapp-ingress-dev
+  namespace: pirapp-dev
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - host: "*.pirapp.io"
+    http:
+      paths:
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: pirapp-api-service-dev
+            port:
+              number: 8000
+      - path: /auth
+        pathType: Prefix
+        backend:
+          service:
+            name: pirapp-auth-service-dev
+            port:
+              number: 8080
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: pirapp-frontend-service-dev
+            port:
+              number: 80
