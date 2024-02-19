@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: sathish8329/priappback:17
+        image: sathish8329/priappback:19
         ports:
         - containerPort: 8000
 
