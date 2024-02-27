@@ -39,35 +39,3 @@ spec:
             name: redirector-service
             port:
               number: 80
-
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: redirector-pod
-  namespace: pirapp
-spec:
-  containers:
-  - name: redirector-container
-    image: nginx:latest
-    volumeMounts:
-    - name: nginx-config
-      mountPath: /etc/nginx/conf.d
-
-volumes:
-- name: nginx-config
-  configMap:
-    name: nginx-config
-
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: redirector-service
-  namespace: pirapp
-spec:
-  selector:
-    app: redirector
-  ports:
-    - protocol: TCP
-      port: 80
