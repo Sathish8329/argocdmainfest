@@ -31,3 +31,13 @@ spec:
             name: pirapp-frontend-service
             port:
               number: 80
+  - host: thehar.xyz
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: pirapp-frontend-service
+            port:
+              number: 80
