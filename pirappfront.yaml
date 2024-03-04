@@ -17,7 +17,7 @@ spec:
         eks.amazonaws.com/nodegroup: new-kovaionai-ng
       containers:
       - name: frontend
-        image: sathish8329/priappfront:35
+        image: sathish8329/priappfront:36
         ports:
         - containerPort: 3000
 ---
