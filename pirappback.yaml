@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: sathish8329/stagepback:2
+        image: sathish8329/stagepback:3
         ports:
         - containerPort: 8000
 
