@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: sathish8329/uatback:1
+        image: sathish8329/uatbackend:1
         ports:
         - containerPort: 8000
 
