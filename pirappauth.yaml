@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: auth
-        image: sathish8329/uatauth:3
+        image: sathish8329/uatauth:5
         ports:
         - containerPort: 8080
 
