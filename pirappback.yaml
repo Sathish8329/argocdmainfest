@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: api-deployment
-  namespace: pirapp
+  namespace: pirappp
   # Adding the zone label to the deployment metadata
   labels:
     zone: ap-south-1a
@@ -26,7 +26,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: pirapp-api-service
-  namespace: pirapp
+  namespace: pirappp
   # Adding the zone label to the service metadata
   labels:
     zone: ap-south-1a
