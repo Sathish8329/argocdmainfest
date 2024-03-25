@@ -2,7 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: auth-deployment
-  namespace: pirapp  # Specify the namespace here
+  namespace: pirapp
+  # Adding the zone label to the deployment metadata
+  labels:
+    zone: ap-south-1a
 spec:
   replicas: 1
   selector:
@@ -12,20 +15,22 @@ spec:
     metadata:
       labels:
         app: auth
+        zone: ap-south-1a  # Adding the zone label to the pod template
     spec:
       containers:
       - name: auth
         image: sathish8329/uatauth:5
         ports:
         - containerPort: 8080
-
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
   name: pirapp-auth-service
-  namespace: pirapp  # Specify the namespace here
+  namespace: pirapp
+  # Adding the zone label to the service metadata
+  labels:
+    zone: ap-south-1a
 spec:
   selector:
     app: auth
