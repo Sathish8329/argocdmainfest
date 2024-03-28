@@ -14,8 +14,6 @@ spec:
         app: frontend
         zone: ap-south-1b  # Adding the zone label here
     spec:
-      nodeSelector:
-        eks.amazonaws.com/nodegroup: new-kovaionai-ng
       containers:
       - name: frontend
         image: sathish8329/uatfront:9
