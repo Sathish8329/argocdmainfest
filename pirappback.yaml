@@ -13,6 +13,8 @@ spec:
       labels:
         app: api
     spec:
+      nodeSelector:
+        eks.amazonaws.com/nodegroup: new-kovaionai-ngg
       containers:
       - name: api
         image: sathish8329/uatbackend:19
