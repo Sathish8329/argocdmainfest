@@ -17,7 +17,7 @@ spec:
         eks.amazonaws.com/nodegroup: new-kovaionai-ngg
       containers:
       - name: api
-        image: sathish8329/uatbackend:19
+        image: sathish8329/uatbackend:20
         ports:
         - containerPort: 8000
 ---
