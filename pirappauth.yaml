@@ -13,8 +13,6 @@ spec:
       labels:
         app: auth
     spec:
-      nodeSelector:
-        eks.amazonaws.com/nodegroup: new-kovaionai-ngg
       containers:
       - name: auth
         image: sathish8329/uatauth:11
