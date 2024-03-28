@@ -13,8 +13,6 @@ spec:
       labels:
         app: frontend
     spec:
-      nodeSelector:
-        eks.amazonaws.com/nodegroup: new-kovaionai-ngg
       containers:
       - name: frontend
         image: sathish8329/uatfront:9
