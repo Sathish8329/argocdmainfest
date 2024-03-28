@@ -3,8 +3,7 @@ kind: Deployment
 metadata:
   name: auth-deployment
   namespace: pirappp
-  # Adding the zone label to the deployment metadata
-  spec:
+spec:
   replicas: 1
   selector:
     matchLabels:
@@ -13,7 +12,6 @@ metadata:
     metadata:
       labels:
         app: auth
-        zone: ap-south-1a  # Adding the zone label to the pod template
     spec:
       containers:
       - name: auth
@@ -26,8 +24,7 @@ kind: Service
 metadata:
   name: pirapp-auth-service
   namespace: pirappp
-  # Adding the zone label to the service metadata
-  spec:
+spec:
   selector:
     app: auth
   ports:
