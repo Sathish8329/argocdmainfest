@@ -4,9 +4,7 @@ metadata:
   name: auth-deployment
   namespace: pirappp
   # Adding the zone label to the deployment metadata
-  labels:
-    zone: ap-south-1a
-spec:
+  spec:
   replicas: 1
   selector:
     matchLabels:
@@ -29,9 +27,7 @@ metadata:
   name: pirapp-auth-service
   namespace: pirappp
   # Adding the zone label to the service metadata
-  labels:
-    zone: ap-south-1a
-spec:
+  spec:
   selector:
     app: auth
   ports:
