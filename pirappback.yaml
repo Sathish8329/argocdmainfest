@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   name: api-deployment
   namespace: pirappp
-  # Adding the zone label to the deployment metadata
 spec:
   replicas: 1
   selector:
@@ -25,8 +24,7 @@ kind: Service
 metadata:
   name: pirapp-api-service
   namespace: pirappp
-  # Adding the zone label to the service metadata
-  spec:
+spec:
   selector:
     app: api
   ports:
