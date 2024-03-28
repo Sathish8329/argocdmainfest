@@ -12,7 +12,6 @@ spec:
     metadata:
       labels:
         app: frontend
-        zone: ap-south-1b  # Adding the zone label here
     spec:
       containers:
       - name: frontend
@@ -33,6 +32,3 @@ spec:
       port: 80
       targetPort: 3000
   type: NodePort
-  # Adding the zone label to the service metadata
-  labels:
-    zone: ap-south-1b
