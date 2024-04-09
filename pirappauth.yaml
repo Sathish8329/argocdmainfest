@@ -18,13 +18,12 @@ spec:
         image: sathish8329/uatauth:16
         ports:
         - containerPort: 8080
+        livenessProbe:
           httpGet:
-            path: /api
-            port: 443   # HTTPS port
-            scheme: HTTPS
-            host: stage.pripapp.io
-          initialDelaySeconds: 300
-          periodSeconds: 10
+            path: /auth   # Change this path based on your application's health check endpoint
+            port: 8080   # Port where your application is listening
+          initialDelaySeconds:  180 # Delay before first probe
+          periodSeconds: 10         # How often to perform the probe
           failureThreshold: 3
 ---
 apiVersion: v1
