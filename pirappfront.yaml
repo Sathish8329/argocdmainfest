@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: sathish8329/uatfront:50
+        image: sathish8329/uatfront:51
         ports:
         - containerPort: 3000
 ---
