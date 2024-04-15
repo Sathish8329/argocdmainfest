@@ -4,10 +4,15 @@ metadata:
   name: api-deployment
   namespace: pirappp
 spec:
-  replicas: 1
+  replicas: 2  # Increase replicas to 2 for rolling update
   selector:
     matchLabels:
       app: api
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
   template:
     metadata:
       labels:
@@ -20,10 +25,17 @@ spec:
         - containerPort: 8000
         livenessProbe:
           httpGet:
-            path: /api   # Change this path based on your application's health check endpoint
-            port: 8000   # Port where your application is listening
-          initialDelaySeconds:  180 # Delay before first probe
-          periodSeconds: 10         # How often to perform the probe
+            path: /api
+            port: 8000
+          initialDelaySeconds: 180
+          periodSeconds: 10
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /api
+            port: 8000
+          initialDelaySeconds: 120  # Adjust as needed
+          periodSeconds: 10
           failureThreshold: 3
 ---
 apiVersion: v1
