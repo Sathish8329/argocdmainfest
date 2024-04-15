@@ -34,7 +34,7 @@ spec:
           httpGet:
             path: /api
             port: 8000
-          initialDelaySeconds: 120  # Adjust as needed
+          initialDelaySeconds: 30  # Adjust as needed
           periodSeconds: 10
           failureThreshold: 3
 ---
