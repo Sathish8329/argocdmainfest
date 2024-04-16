@@ -4,15 +4,15 @@ metadata:
   name: api-deployment
   namespace: pirappp
 spec:
-  replicas: 2  # Increase replicas to 2 for rolling update
   selector:
     matchLabels:
       app: api
+  replicas: 1  # Set replicas to 1 for rolling update with one replica
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
+      maxUnavailable: 0  # Set maxUnavailable to 0 to avoid unavailability during update
+      maxSurge: 1  # Set maxSurge to 1 to allow one additional pod during update
   template:
     metadata:
       labels:
