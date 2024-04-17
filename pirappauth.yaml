@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: auth
-        image: sathish8329/uatauth:37
+        image: sathish8329/uatauth:38
         ports:
         - containerPort: 8080
         livenessProbe:
