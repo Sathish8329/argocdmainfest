@@ -37,6 +37,15 @@ spec:
           initialDelaySeconds: 30  # Adjust as needed
           periodSeconds: 10
           failureThreshold: 3
+        volumeMounts:
+        - name: logs-volume
+          mountPath: /logs
+        env:
+        - name: LOG_DIR
+          value: /logs
+      volumes:
+      - name: logs-volume
+        emptyDir: {}
 ---
 apiVersion: v1
 kind: Service
