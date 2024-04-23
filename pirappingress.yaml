@@ -41,7 +41,3 @@ spec:
             name: pirapp-frontend-service
             port:
               number: 80
-  tls:
-  - hosts:
-    - varahi.lionsms.com
-    secretName: varahi1-lionsms-com-tls
