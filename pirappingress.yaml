@@ -42,7 +42,7 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
 spec:
   rules:
-  - host: "engage1.kovaion.com"
+  - host: "stage1-engage.kovaion.com"
     http:
       paths:
       - path: /
