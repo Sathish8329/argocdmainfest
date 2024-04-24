@@ -31,28 +31,3 @@ spec:
             name: pirapp-frontend-service
             port:
               number: 80
-
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: pirapp-ingress-https
-  namespace: pirappp
-  annotations:
-    kubernetes.io/ingress.class: "nginx"
-spec:
-  rules:
-  - host: "varahi.lionsms.com"
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: pirapp-frontend-service
-            port:
-              number: 80
-  tls:
-  - hosts:
-    - varahi.lionsms.com
-    secretName: varahi1-lionsms-com-tls
