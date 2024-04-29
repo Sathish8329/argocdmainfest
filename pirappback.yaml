@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: sathish8329/uatbackend:67
+        image: sathish8329/uatbackend:68
         ports:
         - containerPort: 8000
         livenessProbe:
