@@ -20,14 +20,14 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: sathish8329/build:v6
+        image: sathish8329/uatfront:103
         ports:
         - containerPort: 3000
         readinessProbe:  # Add readiness probe
           httpGet:
             path: /
             port: 3000
-          initialDelaySeconds: 30
+          initialDelaySeconds: 300
           periodSeconds: 10
           failureThreshold: 3  # Set failure threshold to 3
 
