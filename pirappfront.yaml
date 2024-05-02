@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: sathish8329/uatfront:110
+        image: sathish8329/uatfront:116
         ports:
         - containerPort: 3000
         readinessProbe:  # Add readiness probe
