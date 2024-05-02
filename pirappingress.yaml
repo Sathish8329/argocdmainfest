@@ -5,6 +5,7 @@ metadata:
   namespace: pirappp
   annotations:
     kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/proxy-body-size: "100m" # Increase client_max_body_size to 50 MB
 spec:
   rules:
   - host: "*.pirapp.io"
@@ -40,6 +41,7 @@ metadata:
   namespace: pirappp
   annotations:
     kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/proxy-body-size: "100m" # Increase client_max_body_size to 50 MB
 spec:
   rules:
   - host: "stage1-engage.kovaion.com"
