@@ -58,3 +58,25 @@ spec:
   - hosts:
     - stage1-engage.kovaion.com
     secretName: stage1-engage-kovaion-com-tls
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pirapp-ingress-pirapp
+  namespace: pirappp
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/proxy-body-size: "100m" # Set the maximum allowed request body size to 100 MB
+spec:
+  rules:
+  - host: "pirapp.io"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: pirapp-frontend-service
+            port:
+              number: 80
