@@ -74,7 +74,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: api-logs-pvc
+  name: bound-api-logs-pvc
   namespace: pirappp
 spec:
   accessModes:
@@ -82,3 +82,4 @@ spec:
   resources:
     requests:
       storage: 1Gi
+  volumeName: api-logs-pv  # Specify the name of the PersistentVolume to bind to
