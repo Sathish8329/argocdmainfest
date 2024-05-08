@@ -13,6 +13,8 @@ spec:
       labels:
         app: auth
     spec:
+      nodeSelector:                    # Add this section for node selector
+        eks.amazonaws.com/nodegroup: stage   # Specify the node group nam    
       containers:
       - name: auth
         image: sathish8329/uatauth:40
