@@ -39,7 +39,7 @@ spec:
           failureThreshold: 3
         volumeMounts:
         - name: logs-volume
-          mountPath: /var/log/api
+          mountPath: /usr/src/app/logs
       volumes:
       - name: logs-volume
         persistentVolumeClaim:
