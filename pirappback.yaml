@@ -1,3 +1,4 @@
+User
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -39,13 +40,6 @@ spec:
           initialDelaySeconds: 30
           periodSeconds: 10
           failureThreshold: 3
-        volumeMounts:
-        - name: logs-volume
-          mountPath: /usr/src/app/logs
-      volumes:
-      - name: logs-volume
-        persistentVolumeClaim:
-          claimName: api-logs-pvc
 
 ---
 apiVersion: v1
@@ -61,16 +55,3 @@ spec:
       port: 8000
       targetPort: 8000
   type: NodePort
-
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: api-logs-pvc
-  namespace: pirappp
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 1Gi
