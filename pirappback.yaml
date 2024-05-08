@@ -18,8 +18,8 @@ spec:
       labels:
         app: api
     spec:
-      nodeSelector:                    # Add this section for node selector
-        eks.amazonaws.com/nodegroup: stage   # Specify the node group name
+      nodeSelector:                            # Correct indentation for nodeSelector
+        eks.amazonaws.com/nodegroup: stage    # Specify the node group name
       containers:
       - name: api
         image: sathish8329/uatbackend:90
