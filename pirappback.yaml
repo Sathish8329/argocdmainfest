@@ -55,28 +55,3 @@ spec:
       port: 8000
       targetPort: 8000
   type: NodePort
----
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: my-pv
-spec:
-  capacity:
-    storage: 5Gi
-  volumeMode: Filesystem
-  accessModes:
-    - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Retain
-  hostPath:
-    path: /usr/src/app/logs
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: my-persistent-volume-claim
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 5Gi  # Should match the capacity specified in the PV
