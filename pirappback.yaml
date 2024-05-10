@@ -40,14 +40,6 @@ spec:
           initialDelaySeconds: 30
           periodSeconds: 10
           failureThreshold: 3
-        volumeMounts:                       # Define volumeMounts for mounting the secret
-        - name: secret-volume
-          mountPath: /keys                 # Mount the secret at /keys directory in the container
-      volumes:                             # Define volumes
-      - name: secret-volume
-        secret:                            # Specify the secret to mount
-          secretName: my-keys              # Name of the secret to mount
-
 ---
 apiVersion: v1
 kind: Service
