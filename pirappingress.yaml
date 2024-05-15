@@ -55,3 +55,24 @@ spec:
             name: pirapp-frtback-service
             port:
               number: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pirapp-ingress-pirapp
+  namespace: pirappp
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/proxy-body-size: "100m" # Set the maximum allowed request body size to 100 MB
+spec:
+  rules:
+  - host: "www.pirapp.io"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: pirapp-frtback-service
+            port:
+              number: 80
