@@ -52,6 +52,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: pirapp-frontend-service
+            name: pirapp-frtback-service
             port:
               number: 80
