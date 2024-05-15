@@ -23,7 +23,7 @@ spec:
         eks.amazonaws.com/nodegroup: stage    # Specify the node group name
       containers:
       - name: frtback
-        image: sathish8329/frtback:6
+        image: sathish8329/frtback:7
         ports:
         - containerPort: 3001
         livenessProbe:
