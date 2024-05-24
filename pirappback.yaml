@@ -31,15 +31,13 @@ spec:
             port: 8000
           initialDelaySeconds: 10
           periodSeconds: 10
-          timeoutSeconds: 300  # Increase timeout to 5 minutes (300 seconds)
           failureThreshold: 3
         readinessProbe:
           httpGet:
             path: /api
             port: 8000
           initialDelaySeconds: 10
-          periodSeconds: 10
-          timeoutSeconds: 300  # Increase timeout to 5 minutes (300 seconds)
+          periodSeconds: 10 
           failureThreshold: 3
 ---
 apiVersion: v1
