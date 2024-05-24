@@ -1,4 +1,3 @@
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -19,8 +18,8 @@ spec:
       labels:
         app: api
     spec:
-      nodeSelector:                            # Correct indentation for nodeSelector
-        eks.amazonaws.com/nodegroup: stage    # Specify the node group name
+      nodeSelector:                            
+        eks.amazonaws.com/nodegroup: stage   
       containers:
       - name: api
         image: sathish8329/uatbackend:117
@@ -32,6 +31,7 @@ spec:
             port: 8000
           initialDelaySeconds: 10
           periodSeconds: 10
+          timeoutSeconds: 300  # Increase timeout to 5 minutes (300 seconds)
           failureThreshold: 3
         readinessProbe:
           httpGet:
@@ -39,6 +39,7 @@ spec:
             port: 8000
           initialDelaySeconds: 10
           periodSeconds: 10
+          timeoutSeconds: 300  # Increase timeout to 5 minutes (300 seconds)
           failureThreshold: 3
 ---
 apiVersion: v1
