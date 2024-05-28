@@ -29,14 +29,14 @@ spec:
           httpGet:
             path: /auth
             port: 8080
-          initialDelaySeconds: 120
+          initialDelaySeconds: 10
           periodSeconds: 10
           failureThreshold: 3        
         readinessProbe:  # Add readiness probe
           httpGet:
             path: /auth
             port: 8080
-          initialDelaySeconds: 120
+          initialDelaySeconds: 10
           periodSeconds: 10
           failureThreshold: 5  # Set failure threshold to 3
 
