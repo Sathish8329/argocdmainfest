@@ -22,13 +22,13 @@ spec:
         eks.amazonaws.com/nodegroup: stage    # Specify the node group name
       containers:
       - name: frontend
-        image: sathish8329/uatfront:199
+        image: sathish8329/uatfront:200
         ports:
-        - containerPort: 3000
+        - containerPort: 5001
         readinessProbe:  # Add readiness probe
           httpGet:
             path: /
-            port: 3000
+            port: 5001
           initialDelaySeconds: 30
           periodSeconds: 10
           failureThreshold: 5  # Set failure threshold to 3
