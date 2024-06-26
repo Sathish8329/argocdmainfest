@@ -34,7 +34,7 @@ spec:
           service:
             name: pirapp-frontend-service
             port:
-              number: 5001
+              number: 80
     
 
 ---
