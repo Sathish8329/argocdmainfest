@@ -24,11 +24,11 @@ spec:
       - name: frontend
         image: sathish8329/uatfront:207
         ports:
-        - containerPort: 3000
+        - containerPort: 5001
         readinessProbe:  # Add readiness probe
           httpGet:
             path: /
-            port: 3000
+            port: 5001
           initialDelaySeconds: 30
           periodSeconds: 10
           failureThreshold: 5  # Set failure threshold to 5
@@ -45,5 +45,5 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 3000
+      targetPort: 5001
   type: NodePort
