@@ -22,7 +22,7 @@ spec:
         eks.amazonaws.com/nodegroup: stage   
       containers:
       - name: cron
-        image: sathish8329/cron:10
+        image: sathish8329/cron:v2
         ports:
         - containerPort: 9000
         livenessProbe:
