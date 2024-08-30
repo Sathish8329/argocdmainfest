@@ -25,20 +25,7 @@ spec:
         image: sathish8329/pythonleavebalance:v17
         ports:
         - containerPort: 5000
-        livenessProbe:
-          httpGet:
-            path: /   # Change this path based on your application's health check endpoint
-            port: 5000   # Port where your application is listening
-          initialDelaySeconds:  5 # Delay before first probe
-          periodSeconds: 10         # How often to perform the probe
-          failureThreshold: 3
-        readinessProbe:
-          httpGet:
-            path: /
-            port: 5000
-          initialDelaySeconds: 5  # Adjust as needed
-          periodSeconds: 10
-          failureThreshold: 3
+
 
 ---
 apiVersion: v1
