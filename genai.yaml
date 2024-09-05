@@ -22,7 +22,7 @@ spec:
         eks.amazonaws.com/nodegroup: stage    # Specify the node group name
       containers:
       - name: genai
-        image: sathish8329/pythonleavebalance:5
+        image: sathish8329/pythonleavebalance:6
         ports:
         - containerPort: 5000
         livenessProbe:
