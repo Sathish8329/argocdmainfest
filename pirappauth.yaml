@@ -22,7 +22,7 @@ spec:
         eks.amazonaws.com/nodegroup: stage   # Specify the node group nam    
       containers:
       - name: auth
-        image: sathish8329/uatauth:56
+        image: sathish8329/uatauth:57
         ports:
         - containerPort: 8080
         livenessProbe:
