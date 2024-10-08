@@ -100,5 +100,26 @@ spec:
             name: genai-service
             port:
               number: 5000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: apistage-ingress
+  namespace: pirappp
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/proxy-body-size: "100m" # Set the maximum allowed request body size to 100 MB
+spec:
+  rules:
+  - host: "api.pirapp.io"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: pirapp-apistage-service
+            port:
+              number: 8009
 
 
