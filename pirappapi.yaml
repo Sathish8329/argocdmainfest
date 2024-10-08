@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apistage-deployment
+  namespace: pirappp
+spec:
+  selector:
+    matchLabels:
+      app: apistage
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: apistage
+    spec:
+      nodeSelector:                            # Correct indentation for nodeSelector
+        eks.amazonaws.com/nodegroup: stage    # Specify the node group name
+      containers:
+      - name: apistage
+        image: sathish8329/apistage:v1
+        ports:
+        - containerPort: 8009
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8009
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8009
+          initialDelaySeconds: 10
+          periodSeconds: 10 
+          failureThreshold: 3
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pirapp-apistage-service
+  namespace: pirappp
+spec:
+  selector:
+    app: apistage
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8009
+  type: NodePort
