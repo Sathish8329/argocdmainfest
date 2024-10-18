@@ -17,7 +17,7 @@ spec:
         eks.amazonaws.com/nodegroup: stage    # Specify the node group name
       containers:
       - name: apistage
-        image: sathish8329/apistage:v4
+        image: sathish8329/apistage:v5
         ports:
         - containerPort: 8009
         livenessProbe:
