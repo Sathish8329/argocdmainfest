@@ -18,7 +18,7 @@ spec:
         eks.amazonaws.com/nodegroup: stage    # Specify the node group name
       containers:
       - name: frtback
-        image: sathish8329/onboarding:850
+        image: sathish8329/onboarding:853
         ports:
         - containerPort: 3000
 ---
