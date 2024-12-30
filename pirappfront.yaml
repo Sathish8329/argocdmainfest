@@ -19,7 +19,7 @@ spec:
         app: frontend
     spec:
       nodeSelector:                            # Correct indentation for nodeSelector
-        eks.amazonaws.com/nodegroup: stage    # Specify the node group name
+        eks.amazonaws.com/nodegroup: stage    # Specify the node group name6
       containers:
       - name: frontend
         image: sathish8329/uatfront:982
