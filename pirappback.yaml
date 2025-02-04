@@ -22,7 +22,7 @@ spec:
         eks.amazonaws.com/nodegroup: stage   
       containers:
       - name: api
-        image: sathish8329/uatbackend:1267
+        image: sathish8329/uatbackend:1274
         ports:
         - containerPort: 8000
         livenessProbe:
