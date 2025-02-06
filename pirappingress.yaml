@@ -48,7 +48,7 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-body-size: "100m" # Set the maximum allowed request body size to 100 MB
     nginx.ingress.kubernetes.io/proxy-connect-timeout: "900" # Increase connect timeout to 10 minutes
     nginx.ingress.kubernetes.io/proxy-send-timeout: "900"    # Increase send timeout to 10 minutes
-    nginx.ingress.kubernetes.io/proxy-read-timeout: "900"    # Increase read timeout to 10 minutesspec:
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "900"    # Increase read timeout to 10 minutesspec
   rules:
   - host: "kovaioncloud.com"
     http:
