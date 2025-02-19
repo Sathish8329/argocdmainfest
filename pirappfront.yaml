@@ -22,7 +22,7 @@ spec:
         eks.amazonaws.com/nodegroup: stage    # Specify the node group name6
       containers:
       - name: frontend
-        image: sathish8329/uatfront:1415
+        image: sathish8329/uatfront:1430
         ports:
         - containerPort: 5001
         readinessProbe:  # Add readiness probe
