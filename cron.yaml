@@ -19,7 +19,7 @@ spec:
         app: cron
     spec:
       nodeSelector:                            
-        eks.amazonaws.com/nodegroup: stage   
+        eks.amazonaws.com/nodegroup: stage-private   
       containers:
       - name: cron
         image: sathish8329/cron:20
