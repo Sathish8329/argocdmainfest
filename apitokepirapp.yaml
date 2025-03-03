@@ -14,7 +14,7 @@ spec:
         app: apistage
     spec:
       nodeSelector:                            # Correct indentation for nodeSelector
-        eks.amazonaws.com/nodegroup: stage    # Specify the node group name
+        eks.amazonaws.com/nodegroup: stage-private    # Specify the node group name
       containers:
       - name: apistage
         image: sathish8329/apistage:1515
