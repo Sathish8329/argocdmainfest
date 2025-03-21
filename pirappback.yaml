@@ -25,6 +25,13 @@ spec:
         image: sathish8329/uatbackend:1881
         ports:
         - containerPort: 8000
+       resources:
+          requests:
+            memory: "256Mi"    # Slightly higher than observed usage to account for fluctuations
+            cpu: "50m"         # Low baseline with room for regular operations
+          limits:
+            memory: "384Mi"    # ~1.5x request to allow for memory growth
+            cpu: "500m"        # Allows for occasional CPU spikes shown in metrics        
         livenessProbe:
           httpGet:
             path: /api
