@@ -25,13 +25,13 @@ spec:
         image: sathish8329/cron:20
         ports:
         - containerPort: 9000
-        resources:
-          requests:
-            memory: "150Mi"
-            cpu: "10m"
-          limits:
-            memory: "250Mi"
-            cpu: "100m"
+        # resources:
+          # requests:
+          #   memory: "150Mi"
+          #   cpu: "10m"
+          # limits:
+          #   memory: "250Mi"
+          #   cpu: "100m"
         livenessProbe:
           httpGet:
             path: /cron
