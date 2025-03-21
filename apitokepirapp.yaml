@@ -20,6 +20,13 @@ spec:
         image: sathish8329/apistage:1916
         ports:
         - containerPort: 8009
+        resources:
+          requests:
+            memory: "100Mi"
+            cpu: "5m"
+          limits:
+            memory: "150Mi"
+            cpu: "50m"
         livenessProbe:
           httpGet:
             path: /
