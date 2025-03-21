@@ -25,13 +25,6 @@ spec:
         image: sathish8329/uatauth:841
         ports:
         - containerPort: 8080
-        resources:
-          requests:
-            memory: "200Mi"
-            cpu: "10m"
-          limits:
-            memory: "300Mi"
-            cpu: "100m"
         livenessProbe:
           httpGet:
             path: /auth
