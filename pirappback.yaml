@@ -25,6 +25,13 @@ spec:
         image: sathish8329/uatbackend:1881
         ports:
         - containerPort: 8000
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "50m"
+          limits:
+            memory: "384Mi"
+            cpu: "500m"
         livenessProbe:
           httpGet:
             path: /api
