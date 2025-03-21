@@ -25,6 +25,13 @@ spec:
         image: sathish8329/uatauth:841
         ports:
         - containerPort: 8080
+        resources:
+          requests:
+            memory: "200Mi"
+            cpu: "10m"
+          limits:
+            memory: "300Mi"
+            cpu: "100m"
         livenessProbe:
           httpGet:
             path: /auth
@@ -39,7 +46,6 @@ spec:
           initialDelaySeconds: 10
           periodSeconds: 10
           failureThreshold: 5  # Set failure threshold to 3
-
 ---
 apiVersion: v1
 kind: Service
