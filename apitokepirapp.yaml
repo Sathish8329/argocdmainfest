@@ -17,7 +17,7 @@ spec:
         eks.amazonaws.com/nodegroup: stage-private    # Specify the node group name
       containers:
       - name: apistage
-        image: sathish8329/apistage:1940
+        image: sathish8329/apistage:1941
         ports:
         - containerPort: 8009
         resources:
