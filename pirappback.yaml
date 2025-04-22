@@ -25,6 +25,9 @@ spec:
         image: sathish8329/uatbackend:2406
         ports:
         - containerPort: 8000
+        env:
+        - name: JAEGER_ENDPOINT
+          value: "http://jaeger-collector.tracing.svc.cluster.local:14268/api/traces"
         resources:
           requests:
             memory: "256Mi"
