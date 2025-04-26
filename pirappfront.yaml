@@ -19,7 +19,7 @@ spec:
         app: frontend
     spec:
       nodeSelector:                            # Correct indentation for nodeSelector
-        eks.amazonaws.com/nodegroup: stage-private    # Specify the node group name6
+        eks.amazonaws.com/nodegroup: kovaion-spot-ng    # Specify the node group name6
       containers:
       - name: frontend
         image: sathish8329/uatfront:2405
