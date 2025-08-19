@@ -58,9 +58,9 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: pirapp-frtback-service
+            name: pirapp-frontend-service
             port:
-              number: 80
+              number: 3000
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -82,9 +82,9 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: pirapp-frtback-service
+            name: pirapp-frontend-service
             port:
-              number: 80
+              number: 3000
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
