@@ -1,0 +1,79 @@
+# Create Namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: turfzo
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  namespace: turfzo
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      nodeSelector:
+        eks.amazonaws.com/nodegroup: kovaion-spot-ng
+      containers:
+      - name: backend
+        image: sathish8329/turfzo:v1   # replace with your backend image
+        ports:
+        - containerPort: 5000
+        readinessProbe:
+          httpGet:
+            path: /api/health    # change if your backend has a different health endpoint
+            port: 5000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          failureThreshold: 5
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: turfzo-backend-service
+  namespace: turfzo
+spec:
+  selector:
+    app: backend
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+  type: ClusterIP
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: turfzo-ingress
+  namespace: turfzo
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/proxy-body-size: "100m"         # Max request body size 100 MB
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "900"    # Connect timeout 15 min
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "900"       # Send timeout 15 min
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "900"       # Read timeout 15 min
+spec:
+  rules:
+  - host: "api.turfzo.com"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: turfzo-frontend-service
+            port:
+              number: 5000
