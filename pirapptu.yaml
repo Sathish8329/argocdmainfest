@@ -74,6 +74,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: turfzo-frontend-service
+            name: turfzo-backend-service
             port:
               number: 5000
