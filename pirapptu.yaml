@@ -10,7 +10,7 @@ metadata:
   name: backend-deployment
   namespace: turfzo
 spec:
-  replicas: 0
+  replicas: 1
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -28,7 +28,7 @@ spec:
         eks.amazonaws.com/nodegroup: kovaion-spot-ng
       containers:
       - name: backend
-        image: sathish8329/turfzo:v1   # replace with your backend image
+        image: sathish8329/turfzo:v2   # replace with your backend image
         ports:
         - containerPort: 5000
         readinessProbe:
