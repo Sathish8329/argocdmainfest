@@ -10,7 +10,7 @@ metadata:
   name: backend-deployment
   namespace: turfzo
 spec:
-  replicas: 1
+  replicas: 0
   strategy:
     type: RollingUpdate
     rollingUpdate:
