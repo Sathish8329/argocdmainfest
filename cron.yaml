@@ -7,7 +7,7 @@
 #   selector:
 #     matchLabels:
 #       app: cron
-#   replicas: 1
+#   replicas: 0
 #   strategy:
 #     type: RollingUpdate
 #     rollingUpdate:
