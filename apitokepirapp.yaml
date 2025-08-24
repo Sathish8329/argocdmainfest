@@ -14,7 +14,7 @@
 #         app: apistage
 #     spec:
 #       nodeSelector:                            # Correct indentation for nodeSelector
-#         eks.amazonaws.com/nodegroup: stage-private    # Specify the node group name
+#         eks.amazonaws.com/nodegroup: kovaion-spot-ng    # Specify the node group name
 #       containers:
 #       - name: apistage
 #         image: sathish8329/apistage:1941
