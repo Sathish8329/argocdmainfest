@@ -28,7 +28,7 @@ spec:
         eks.amazonaws.com/nodegroup: kovaion-spot-ng
       containers:
       - name: backend
-        image: sathish8329/turfzo:v3   # replace with your backend image
+        image: sathish8329/turfzo:v4   # replace with your backend image
         ports:
         - containerPort: 5000
         readinessProbe:
