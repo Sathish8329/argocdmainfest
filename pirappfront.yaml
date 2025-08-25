@@ -22,7 +22,7 @@ spec:
         eks.amazonaws.com/nodegroup: kovaion-spot-ng    # Specify the node group name6
       containers:
       - name: frontend
-        image: sathish8329/crmfront:3829
+        image: sathish8329/crmfront:3832
         ports:
         - containerPort: 3000
         readinessProbe:  # Add readiness probe
