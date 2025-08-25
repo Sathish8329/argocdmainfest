@@ -61,25 +61,26 @@ metadata:
   namespace: turfzo
   annotations:
     kubernetes.io/ingress.class: "nginx"
-    nginx.ingress.kubernetes.io/proxy-body-size: "100m"         # Max request body size 100 MB
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
-    nginx.ingress.kubernetes.io/proxy-connect-timeout: "900"    # Connect timeout 15 min
-    nginx.ingress.kubernetes.io/proxy-send-timeout: "900"       # Send timeout 15 min
-    nginx.ingress.kubernetes.io/proxy-read-timeout: "900"       # Read timeout 15 min
+    nginx.ingress.kubernetes.io/proxy-body-size: "100m"
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "900"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "900"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "900"
 spec:
+  tls:
+    - hosts:
+        - api.turfzo.com
+      secretName: turfzo-tls
   rules:
-  - host: "api.turfzo.com"
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: turfzo-backend-service
-            port:
-              number: 5000
-tls:
-  - hosts:
-    - api.turfzo.com
-    secretName: turfzo-tls
+    - host: "api.turfzo.com"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: turfzo-backend-service
+                port:
+                  number: 5000
+
 
