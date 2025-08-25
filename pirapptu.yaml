@@ -77,3 +77,8 @@ spec:
             name: turfzo-backend-service
             port:
               number: 5000
+tls:
+  - hosts:
+    - api.turfzo.com
+    secretName: turfzo-tls
+
