@@ -7,7 +7,7 @@ spec:
   selector:
     matchLabels:
       app: api
-  replicas: 19
+  replicas: 1
   strategy:
     type: RollingUpdate
     rollingUpdate:
