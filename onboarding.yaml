@@ -14,8 +14,8 @@ spec:
       labels:
         app: frtback
     spec:
-      nodeSelector:                            # Correct indentation for nodeSelector
-        eks.amazonaws.com/nodegroup: kovaion-spot-ng    # Specify the node group name
+      # nodeSelector:                            # Correct indentation for nodeSelector
+      #   eks.amazonaws.com/nodegroup: kovaion-spot-ng    # Specify the node group name
       containers:
       - name: frtback
         image: sathish8329/onboarding:863
