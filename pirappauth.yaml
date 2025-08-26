@@ -19,7 +19,7 @@ spec:
         app: auth
     spec:
       nodeSelector:                    # Add this section for node selector
-        eks.amazonaws.com/nodegroup: gpu-on-demand-ng # stage-private   # Specify the node group nam    
+        eks.amazonaws.com/nodegroup: stage-private   # Specify the node group nam    
       containers:
       - name: auth
         image: sathish8329/uatauth:2490
