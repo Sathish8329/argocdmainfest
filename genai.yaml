@@ -19,7 +19,7 @@ spec:
         app: genai
     spec:
       nodeSelector:                            # Correct indentation for nodeSelector
-        eks.amazonaws.com/nodegroup: prod-private    # Specify the node group name
+        eks.amazonaws.com/nodegroup: gpu-on-demand-ng # prod-private    # Specify the node group name
       containers:
       - name: genai
         image: sathish8329/pythonleavebalance:3811
