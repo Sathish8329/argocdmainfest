@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: frtback
-  replicas: 0
+  replicas: 1
   template:
     metadata:
       labels:
@@ -18,7 +18,7 @@ spec:
         eks.amazonaws.com/nodegroup: kovaion-spot-ng    # Specify the node group name
       containers:
       - name: frtback
-        image: sathish8329/onboarding:863
+        image: 627133981011.dkr.ecr.ap-south-1.amazonaws.com/onboarding:863
         ports:
         - containerPort: 3000
 ---
