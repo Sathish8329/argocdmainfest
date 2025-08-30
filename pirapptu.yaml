@@ -25,7 +25,7 @@ spec:
         app: backend
     spec:
       nodeSelector:
-        eks.amazonaws.com/nodegroup: kovaion-spot-ng
+        eks.amazonaws.com/nodegroup: stage-private
       containers:
       - name: backend
         image: sathish8329/tufzo:v4   # replace with your backend image
