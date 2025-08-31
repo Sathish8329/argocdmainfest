@@ -28,7 +28,7 @@ spec:
         eks.amazonaws.com/nodegroup: stage-private
       containers:
       - name: backend
-        image: sathish8329/tufzo:v4   # replace with your backend image
+        image: sathish8329/tufzo:v5   # replace with your backend image
         ports:
         - containerPort: 5000
         readinessProbe:
