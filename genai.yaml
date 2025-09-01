@@ -22,7 +22,7 @@ spec:
         eks.amazonaws.com/nodegroup: prod-private    # Specify the node group name
       containers:
       - name: genai
-        image: sathish8329/pythonleavebalance:3811
+        image: sathish8329/pythonleavebalance:3917
         ports:
         - containerPort: 5000
         livenessProbe:
