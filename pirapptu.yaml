@@ -1,8 +1,8 @@
-# Create Namespace
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: turfzo
+# # Create Namespace
+# apiVersion: v1
+# kind: Namespace
+# metadata:
+#   name: turfzo
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -10,7 +10,7 @@ metadata:
   name: backend-deployment
   namespace: turfzo
 spec:
-  replicas: 1
+  replicas: 0
   strategy:
     type: RollingUpdate
     rollingUpdate:
