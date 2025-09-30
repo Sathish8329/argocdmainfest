@@ -22,7 +22,7 @@ spec:
         eks.amazonaws.com/nodegroup: stage-private   
       containers:
       - name: api
-        image: sathish8329/uatbackend:3275
+        image: 627133981011.dkr.ecr.ap-south-1.amazonaws.com/delveant_backend_testing:latest
         ports:
         - containerPort: 8000
         resources:
