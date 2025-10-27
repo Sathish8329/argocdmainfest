@@ -22,7 +22,7 @@ spec:
         eks.amazonaws.com/nodegroup: stage-private    # Specify the node group name6
       containers:
       - name: frontend
-        image: 627133981011.dkr.ecr.ap-south-1.amazonaws.com/delveant_frontend_testing:4656
+        image: 627133981011.dkr.ecr.ap-south-1.amazonaws.com/delveant_frontend_testing:4719
         ports:
         - containerPort: 3000
         readinessProbe:  # Add readiness probe
