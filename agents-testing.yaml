@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: agents
-        image: 627133981011.dkr.ecr.ap-south-1.amazonaws.com/delveant_agents_testing:4767
+        image: 627133981011.dkr.ecr.ap-south-1.amazonaws.com/delveant_agents_testing:4770
         ports:
         - containerPort: 5000
         resources:
