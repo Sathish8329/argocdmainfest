@@ -83,6 +83,7 @@
 #                 port:
 #                   number: 5000
 
-password: 123@devcomrooT12
+AWS: 123@devcomrooT12
+Azure token pat: 13432dfasdfsatrt1345235
 
 
